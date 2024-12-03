@@ -27,7 +27,7 @@ public class Comment {
     @NotBlank(message = "Comment cannot be empty")
     private String commentText;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name="post_id", nullable=false)
     private Post post;
 

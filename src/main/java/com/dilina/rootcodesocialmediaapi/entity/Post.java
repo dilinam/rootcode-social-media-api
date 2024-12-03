@@ -3,7 +3,6 @@ package com.dilina.rootcodesocialmediaapi.entity;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -32,7 +31,7 @@ public class Post {
     @NotBlank(message = "Description cannot be empty")
     private String description;
 
-    @OneToMany(mappedBy="post", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy="post", cascade = CascadeType.PERSIST)
     private Set<Comment> comments;
 
 }
